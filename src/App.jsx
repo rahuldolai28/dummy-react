@@ -7,8 +7,10 @@ import CountdownTimer from "./components/stopwatch/CountdownTimer";
 function App() {
 
     return (
-        <div >
-            {/* <PaginationTest/> */}
+        <div className="App" >
+            <h1 className="title">Let,s do this</h1>
+            <PaginationTest/>
+            <hr />
             <Clock />
             <hr />
             <CountdownTimer/>

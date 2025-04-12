@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import './Clock.css'
 
 export default function Clock_index() {
     const [time, setTime] = useState(new Date());
@@ -11,8 +12,8 @@ export default function Clock_index() {
     }, []);
 
     return (
-        <div className="Clock_index">
-            <h3>Digital Clock</h3>
+        <div className="digital-clock">
+            <h2 className="title">Digital Clock</h2>
             <div className="clock">
                 {/* {console.log(time)} */}
                 <div className="time">
