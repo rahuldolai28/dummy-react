@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Count from "./Count.jsx";
 export default function CountdownTimer() {
     function handleTimeFinish() {
@@ -6,10 +7,53 @@ export default function CountdownTimer() {
         );
     }
 
+    const [inputValue, setInputValue] = useState(0);
+    const [initialTime, setInitialTime] = useState(inputValue);
+    function input() {
+        function handleInputChange(event) {
+            const value = event.target.value;
+            setInputValue(value);
+        }
+        return (
+            <div className="input-container">
+                <label htmlFor="time-input">Set Time (in seconds):</label>
+                <input
+                    type="number"
+                    id="time-input"
+                    value={inputValue}
+                    onChange={handleInputChange}
+                />
+                &nbsp;&nbsp;
+                <button
+                    onClick={() => {
+                        console.log("inputValue", inputValue);
+                        setInitialTime(inputValue);
+                    }}>
+                    Go
+                </button>
+            </div>
+        );
+    }
+
     return (
         <div className="countdown-container">
             <h3>CountDown Timer </h3>
-            <Count initialTime={10} onTimeFinish={handleTimeFinish} />
+
+            {input()}
+
+            <Count
+                key={initialTime} // 🔥 This forces Count to reset
+                initialTime={initialTime}
+                onTimeFinish={handleTimeFinish}
+            />
         </div>
     );
 }
+
+// export default function Input({ input }) {
+//     const [inputValue, setInputValue] = useState(input);
+
+//     return (
+
+//     );
+// }
