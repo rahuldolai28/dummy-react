@@ -7,13 +7,39 @@ export default function CountdownTimer() {
         );
     }
 
+    const funnyAlerts = [
+        "Eta ki re? Number chaichi, r tumi equation likhcho? 😂",
+        "Ektu matha thanda kore number dao re bhai 😅",
+        "Dekh bhai, timer er shonge maja korte gele heartbreak hobe 💔",
+        "Dekh bhai, timer er shonge maja korish na 😎 Number diye de!",
+        "Tumse na ho payega... number toh sahi daal 😭",
+    ];
+
+    const randomAlert =
+        funnyAlerts[Math.floor(Math.random() * funnyAlerts.length)];
+
     const [inputValue, setInputValue] = useState(0);
     const [initialTime, setInitialTime] = useState(inputValue);
     function input() {
         function handleInputChange(event) {
             const value = event.target.value;
             if (value.includes(".") || parseInt(value) <= 0) return;
-            setInputValue(value);
+            if (value === "" || /^[0-9]+$/.test(value)) {
+                setInputValue(value);
+            }
+        }
+        function handleGo() {
+            if (inputValue !== "" && !isNaN(inputValue)) {
+                const seconds = parseInt(inputValue, 10);
+                if (seconds > 0) {
+                    setInitialTime(seconds);
+                } else {
+                    alert(randomAlert);
+                }
+            } else {
+                alert(randomAlert);
+            }
+            setInitialTime(inputValue);
         }
         return (
             <div className="input-container">
@@ -21,16 +47,23 @@ export default function CountdownTimer() {
                 <input
                     type="number"
                     id="time-input"
+                    min="1"
                     value={inputValue}
                     onChange={handleInputChange}
                 />
                 &nbsp;&nbsp;
                 <button
                     onClick={() => {
-                        console.log("inputValue", inputValue);
-                        setInitialTime(inputValue);
+                        handleGo();
                     }}>
                     Go
+                </button>
+                &nbsp;&nbsp;
+                <button
+                    onClick={() => {
+                        document.getElementById("time-input").value = "";
+                    }}>
+                    Reset
                 </button>
             </div>
         );

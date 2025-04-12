@@ -11,15 +11,13 @@ export default function Count({ initialTime, onTimeFinish }) {
             //interval
             intervalReference.current = setInterval(() => {
                 setTime((prevTime) => {
-                    if (prevTime === 0) {
+                    if (prevTime <= 0) {
                         clearInterval(intervalReference.current);
                         setIsRunning(false);
-                        if (onTimeFinish) {
-                            onTimeFinish();
-                        }
+                        if (onTimeFinish) onTimeFinish();
                         return 0;
-                    }
-                    return prevTime - 1;
+                      }                      
+                    return prevTime - 1
                 });
             }, 1000);
         } else {
@@ -39,7 +37,7 @@ export default function Count({ initialTime, onTimeFinish }) {
     }
     function handleReset() {
         clearInterval(intervalReference.current);
-        setTime(initialTime);
+        setTime(0);
         setIsRunning((prevIsRunning) => false);
     }
     function handleStart() {
@@ -50,14 +48,14 @@ export default function Count({ initialTime, onTimeFinish }) {
         <div className="timer">
             <h3>
                 {String(minutes).padStart(2, "0")} :
-                {String(seconds).padStart(2, "0")};
+                {String(seconds).padStart(2, "0")}
             </h3>
             <div className="timer-buttons">
                 <button onClick={handlePauseAndResume}>
                     {isRunning ? "Pause" : "Resume"}
-                </button>
-                <button onClick={handleReset}> Reset </button>
-                <button onClick={handleStart}> Start </button>
+                </button>&nbsp;
+                <button onClick={handleReset}> Reset </button>&nbsp;
+                <button onClick={handleStart}> Start </button>&nbsp;
             </div>
         </div>
     );
