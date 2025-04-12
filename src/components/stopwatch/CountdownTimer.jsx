@@ -42,7 +42,7 @@ export default function CountdownTimer() {
         }
         return (
             <div className="input-container">
-                <label htmlFor="time-input">Set Time (in seconds):</label>
+                <label htmlFor="time-input">Set Time (in seconds):</label><br /><br />
                 <input
                     type="number"
                     id="time-input"
