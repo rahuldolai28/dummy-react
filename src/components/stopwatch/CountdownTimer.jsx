@@ -12,6 +12,7 @@ export default function CountdownTimer() {
     function input() {
         function handleInputChange(event) {
             const value = event.target.value;
+            if (value.includes(".") || parseInt(value) <= 0) return;
             setInputValue(value);
         }
         return (
