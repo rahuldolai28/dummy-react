@@ -10,7 +10,6 @@ export default function CountdownTimer() {
     const funnyAlerts = [
         "Eta ki re? Number chaichi, r tumi equation likhcho? 😂",
         "Ektu matha thanda kore number dao re bhai 😅",
-        "Dekh bhai, timer er shonge maja korte gele heartbreak hobe 💔",
         "Dekh bhai, timer er shonge maja korish na 😎 Number diye de!",
         "Tumse na ho payega... number toh sahi daal 😭",
     ];
@@ -56,7 +55,7 @@ export default function CountdownTimer() {
                     onClick={() => {
                         handleGo();
                     }}>
-                    Go
+                    Start
                 </button>
                 &nbsp;&nbsp;
                 <button

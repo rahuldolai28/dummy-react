@@ -40,9 +40,6 @@ export default function Count({ initialTime, onTimeFinish }) {
         setTime(0);
         setIsRunning((prevIsRunning) => false);
     }
-    function handleStart() {
-        setIsRunning((prevIsRunning) => true);
-    }
 
     return (
         <div className="timer">
@@ -55,7 +52,7 @@ export default function Count({ initialTime, onTimeFinish }) {
                     {isRunning ? "Pause" : "Resume"}
                 </button>&nbsp;
                 <button onClick={handleReset}> Reset </button>&nbsp;
-                <button onClick={handleStart}> Start </button>&nbsp;
+                
             </div>
         </div>
     );
