@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Count from "./Count.jsx";
+import "./Count.css";
 export default function CountdownTimer() {
     function handleTimeFinish() {
         console.log(
@@ -42,7 +43,9 @@ export default function CountdownTimer() {
         }
         return (
             <div className="input-container">
-                <label htmlFor="time-input">Set Time (in seconds):</label><br /><br />
+                <label htmlFor="time-input">Set Time (in seconds):</label>
+                <br />
+                <br />
                 <input
                     type="number"
                     id="time-input"
@@ -52,6 +55,7 @@ export default function CountdownTimer() {
                 />
                 &nbsp;&nbsp;
                 <button
+                    className="start"
                     onClick={() => {
                         handleGo();
                     }}>
@@ -59,8 +63,9 @@ export default function CountdownTimer() {
                 </button>
                 &nbsp;&nbsp;
                 <button
+                    className="reset"
                     onClick={() => {
-                        document.getElementById("time-input").value = "";
+                        setInputValue("");
                     }}>
                     Reset
                 </button>
@@ -70,7 +75,7 @@ export default function CountdownTimer() {
 
     return (
         <div className="countdown-container">
-            <h3>CountDown Timer </h3>
+            <h3 className="title">CountDown Timer </h3>
 
             {input()}
 

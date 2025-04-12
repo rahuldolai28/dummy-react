@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 
 export default function Count({ initialTime, onTimeFinish }) {
@@ -16,8 +15,8 @@ export default function Count({ initialTime, onTimeFinish }) {
                         setIsRunning(false);
                         if (onTimeFinish) onTimeFinish();
                         return 0;
-                      }                      
-                    return prevTime - 1
+                    }
+                    return prevTime - 1;
                 });
             }, 1000);
         } else {
@@ -43,16 +42,19 @@ export default function Count({ initialTime, onTimeFinish }) {
 
     return (
         <div className="timer">
-            <h3>
+            <p className="running-timer" >
                 {String(minutes).padStart(2, "0")} :
                 {String(seconds).padStart(2, "0")}
-            </h3>
+            </p>
             <div className="timer-buttons">
-                <button onClick={handlePauseAndResume}>
+                <button className="resume" onClick={handlePauseAndResume}>
                     {isRunning ? "Pause" : "Resume"}
-                </button>&nbsp;
-                <button onClick={handleReset}> Reset </button>&nbsp;
-                
+                </button>
+                &nbsp;
+                <button className="reset" onClick={handleReset}> 
+                    Reset
+                </button>
+                &nbsp;
             </div>
         </div>
     );
