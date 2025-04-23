@@ -11,7 +11,7 @@ import CurrencyConverter from "./components/currency-converter/index";
 function App() {
     return (
         <div className="App">
-            <h1 className="title">Let,s do this</h1>
+            <p className="main-title">20 React Projects</p>
             <PaginationTest />
             <Clock />
             <CountdownTimer />
