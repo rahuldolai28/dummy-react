@@ -4,7 +4,7 @@
     padding-bottom: 30px;
 }
 .title {
-    font-size: 40px;
+    font-size: 36px;
 }
 .start {
     background-color: rgb(0, 173, 0);
@@ -33,4 +33,21 @@
     font-size: 30px;
     margin: 20px;
     font-weight: bolder;
+}
+#time-input{
+    width: 60%;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding-left: 5px;
+}
+#time-input:focus{
+    outline: none;
+    border: 2px solid rgb(0, 173, 0);
+}
+.input-label{
+    font-size: 20px;
+    margin-right: 10px;
+}
+.set-time{
+    font-size: 20px;
 }

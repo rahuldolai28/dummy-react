@@ -35,10 +35,10 @@ export default function RandomQuoteGenerator() {
 
     return (
         <div className="random-quote-generator">
-            <h1>random quote generator</h1>
+            <h1>Random Quote Generator</h1>
             <div className="quote-wrapper">
                 <p>{quote}</p>
-                <h5>{author}</h5>
+                <h5>~ {author}</h5>
                 <button onClick={fetchQuote} className="quote-button">
                     {loading ? "Loading..." : "Get New Quote"}
                 </button>

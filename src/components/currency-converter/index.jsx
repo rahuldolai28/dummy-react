@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import "./currency.css";
 
 export default function CurrencyConverter() {
     const [amount, setAmount] = useState(0);
     const [fromCurrency, setFromCurrency] = useState("USD");
     const [toCurrency, setToCurrency] = useState("INR");
-    const [exchangeRate, setExchangeRate] = useState();
-    const [convertedAmount, setConvertedAmount] = useState();
+    const [exchangeRate, setExchangeRate] = useState("");
+    const [convertedAmount, setConvertedAmount] = useState("");
 
     async function fetchExchangeRate() {
         const apiResponse = await fetch(
@@ -17,13 +18,12 @@ export default function CurrencyConverter() {
         const result = await apiResponse.json();
         const calculateRate = result?.rates[toCurrency];
         setExchangeRate(calculateRate);
-        console.log(result);
-        
+        setConvertedAmount((amount * calculateRate).toFixed(2));
     }
 
     useEffect(() => {
         fetchExchangeRate();
-    },[]);
+    }, [fromCurrency, toCurrency, amount]);
 
     function handleAmountChnage(event) {
         setAmount(event.target.value);
@@ -41,7 +41,6 @@ export default function CurrencyConverter() {
         <div className="currency-converter">
             <h1>Currency Converter</h1>
             <div className="input-container">
-                <label htmlFor="amount">Amount:</label>
                 <input
                     type="number"
                     value={amount}
@@ -63,11 +62,14 @@ export default function CurrencyConverter() {
             <div className="input-container">
                 <input type="text" value={convertedAmount} readOnly />
                 <select value={toCurrency} onChange={handleToCurrencyChange}>
-                    <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
                     <option value="INR">INR</option>
+                    <option value="USD">USD</option>
                 </select>
             </div>
+            <p className="exchange-rate" >
+                Exchange Rate: 1 {fromCurrency} = {exchangeRate} {toCurrency}
+            </p>
         </div>
     );
 }

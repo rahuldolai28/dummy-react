@@ -4,7 +4,7 @@ import "./Tooltip.css";
 export default function TooltipTest() {
     let q = "You are a very good developer👍";
     return (
-        <div>
+        <div className="main">
             <Tooltip
                 delay={600}
                 content={q}

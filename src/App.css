@@ -4,13 +4,17 @@
     padding: 0px;
     text-align: center;
     box-sizing: border-box;
-  }
-    
- .App{
-  padding: 20px;
- }
+}
 
- .title{
-  margin-bottom: 30px;
- }
- 
+.App {
+    padding: 20px;
+}
+
+.title {
+    margin-bottom: 30px;
+}
+
+.App > * {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}

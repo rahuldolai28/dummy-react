@@ -3,9 +3,7 @@ import Count from "./Count.jsx";
 import "./Count.css";
 export default function CountdownTimer() {
     function handleTimeFinish() {
-        console.log(
-            "Once the timer is finished I want to make an api call and save some data in database "
-        );
+        alert("Time up! ");
     }
 
     const funnyAlerts = [
@@ -18,7 +16,7 @@ export default function CountdownTimer() {
     const randomAlert =
         funnyAlerts[Math.floor(Math.random() * funnyAlerts.length)];
 
-    const [inputValue, setInputValue] = useState(0);
+    const [inputValue, setInputValue] = useState("");
     const [initialTime, setInitialTime] = useState(inputValue);
     function input() {
         function handleInputChange(event) {
@@ -43,7 +41,9 @@ export default function CountdownTimer() {
         }
         return (
             <div className="input-container">
-                <label htmlFor="time-input">Set Time (in seconds):</label>
+                <label className="input-label" htmlFor="time-input">
+                    Set Time (in seconds):
+                </label>
                 <br />
                 <br />
                 <input
@@ -79,19 +79,19 @@ export default function CountdownTimer() {
 
             {input()}
 
-            <Count
-                key={initialTime} // 🔥 This forces Count to reset
-                initialTime={initialTime}
-                onTimeFinish={handleTimeFinish}
-            />
+            {initialTime > 0 && (
+                <Count
+                    key={initialTime}
+                    initialTime={initialTime}
+                    onTimeFinish={handleTimeFinish}
+                />
+            )}
+            {initialTime <= 0 && (
+                <div className="timer">
+                    <p className="running-timer">00 : 00</p>
+                    <p className="set-time">Set a time to start</p>
+                </div>
+            )}
         </div>
     );
 }
-
-// export default function Input({ input }) {
-//     const [inputValue, setInputValue] = useState(input);
-
-//     return (
-
-//     );
-// }

@@ -12,16 +12,13 @@ function App() {
     return (
         <div className="App">
             <h1 className="title">Let,s do this</h1>
-            {/* <PaginationTest/>
-            <hr />
+            <PaginationTest />
             <Clock />
-            <hr />
-            <CountdownTimer/>
-            <hr /> */}
+            <CountdownTimer />
             {/* something wrong in <MainProgress/> */}
-            {/* <RandomQuote/> */}
-            {/* <TooltipTest /> */}
-            <CurrencyConverter/>
+            <RandomQuote />
+            <TooltipTest />
+            <CurrencyConverter />
         </div>
     );
 }
