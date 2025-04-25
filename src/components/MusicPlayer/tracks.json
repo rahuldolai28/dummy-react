@@ -1,0 +1,52 @@
+[
+    {
+        "title": "Ocean Breeze",
+        "source": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        "image": "https://via.placeholder.com/150/1abc9c/ffffff?text=Ocean+Breeze"
+    },
+    {
+        "title": "Midnight Drive",
+        "source": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+        "image": "https://via.placeholder.com/150/34495e/ffffff?text=Midnight+Drive"
+    },
+    {
+        "title": "Summer Nights",
+        "source": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+        "image": "https://via.placeholder.com/150/f39c12/ffffff?text=Summer+Nights"
+    },
+    {
+        "title": "Chill Vibes",
+        "source": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+        "image": "https://via.placeholder.com/150/9b59b6/ffffff?text=Chill+Vibes"
+    },
+    {
+        "title": "Skyline Motion",
+        "source": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+        "image": "https://via.placeholder.com/150/2980b9/ffffff?text=Skyline+Motion"
+    },
+    {
+        "title": "Echoes of Time",
+        "source": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+        "image": "https://via.placeholder.com/150/2ecc71/ffffff?text=Echoes+of+Time"
+    },
+    {
+        "title": "Neon Lights",
+        "source": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+        "image": "https://via.placeholder.com/150/e74c3c/ffffff?text=Neon+Lights"
+    },
+    {
+        "title": "Crystal Rain",
+        "source": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+        "image": "https://via.placeholder.com/150/8e44ad/ffffff?text=Crystal+Rain"
+    },
+    {
+        "title": "Golden Hour",
+        "source": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+        "image": "https://via.placeholder.com/150/f1c40f/ffffff?text=Golden+Hour"
+    },
+    {
+        "title": "Wavescape",
+        "source": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+        "image": "https://via.placeholder.com/150/16a085/ffffff?text=Wavescape"
+    }
+]

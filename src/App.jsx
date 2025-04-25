@@ -7,6 +7,8 @@ import MainProgress from "./components/progress/MainProgress";
 import RandomQuote from "./components/random-quote/index";
 import TooltipTest from "./components/Tooltip/test";
 import CurrencyConverter from "./components/currency-converter/index";
+import FilterProducts from "./components/filter-products/index";
+import MusicPlayer from "./components/MusicPlayer/index";
 
 function App() {
     return (
@@ -19,6 +21,8 @@ function App() {
             <RandomQuote />
             <TooltipTest />
             <CurrencyConverter />
+            <FilterProducts />
+            <MusicPlayer />
         </div>
     );
 }

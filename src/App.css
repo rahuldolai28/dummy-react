@@ -32,3 +32,13 @@
   text-decoration-style: wavy;
   text-decoration: underline wavy #333 2px 0px 0px 0px 0px;
 }
+.title {
+    text-align: center;
+    font-size: 3.5rem !important;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 0%;
+    padding: 0% 0 0 0;
+    color: #100f0fae;
+    text-shadow: 2px 2px 4px #e1f81381;
+}
