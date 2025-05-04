@@ -39,7 +39,7 @@ export default function CurrencyConverter() {
 
     return (
         <div className="currency-converter">
-            <h1>Currency Converter</h1>
+            <h1 className="title currency-title">6. Currency Converter</h1>
             <div className="input-container">
                 <input
                     type="number"

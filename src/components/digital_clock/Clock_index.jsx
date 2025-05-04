@@ -13,7 +13,7 @@ export default function Clock_index() {
 
     return (
         <div className="digital-clock">
-            <h2 className="title">Digital Clock</h2>
+            <h2 className="title clock-title">2. Digital Clock</h2>
             <div className="clock">
                 {/* {console.log(time)} */}
                 <div className="time">

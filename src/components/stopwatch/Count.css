@@ -3,8 +3,8 @@
     background-color: rgb(224, 223, 223);
     padding-bottom: 30px;
 }
-.title {
-    font-size: 36px;
+.count-title{
+    margin-bottom: 25px;
 }
 .start {
     background-color: rgb(0, 173, 0);

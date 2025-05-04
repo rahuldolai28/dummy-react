@@ -16,7 +16,6 @@ export default function RandomQuoteGenerator() {
                 }
             );
             const data = await response.json();
-            console.log(data);
             if(data && Object.keys(data).length > 0) {
                 setLoading(false);
                 setQuote(data.quote);
@@ -35,7 +34,7 @@ export default function RandomQuoteGenerator() {
 
     return (
         <div className="random-quote-generator">
-            <h1>Random Quote Generator</h1>
+            <h1 className="title quote-title">4. Random Quote Generator</h1>
             <div className="quote-wrapper">
                 <p>{quote}</p>
                 <h5>~ {author}</h5>

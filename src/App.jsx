@@ -9,20 +9,26 @@ import TooltipTest from "./components/Tooltip/test";
 import CurrencyConverter from "./components/currency-converter/index";
 import FilterProducts from "./components/filter-products/index";
 import MusicPlayer from "./components/MusicPlayer/index";
-
+import ProgressPercent from "./components/progress-percent/index";
+import FileUpload from "./components/file-upload/index";
+import QuizApp from "./components/quiz-app/Quiz-App.jsx";
 function App() {
     return (
         <div className="App">
-            <p className="main-title">20 React Projects</p>
+            {/* something wrong in <MainProgress/> */}
+            <p className="main-title">15 React Projects</p>
             <PaginationTest />
             <Clock />
             <CountdownTimer />
-            {/* something wrong in <MainProgress/> */}
             <RandomQuote />
             <TooltipTest />
             <CurrencyConverter />
+            <ProgressPercent />
             <FilterProducts />
             <MusicPlayer />
+            <FileUpload/>
+            <QuizApp/>
+
         </div>
     );
 }

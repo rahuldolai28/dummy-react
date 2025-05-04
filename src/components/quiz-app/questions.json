@@ -1,0 +1,67 @@
+[
+    {
+        "question": "What is the capital of France?",
+        "options": ["Paris", "Berlin", "Madrid", "Rome"],
+        "correctAnswer": "Paris"
+    },
+    {
+        "question": "Which planet is known as the Red Planet?",
+        "options": ["Mars", "Venus", "Jupiter", "Saturn"],
+        "correctAnswer": "Mars"
+    },
+    {
+        "question": "Who wrote 'Romeo and Juliet'?",
+        "options": [
+            "Charles Dickens",
+            "Jane Austen",
+            "William Shakespeare",
+            "Leo Tolstoy"
+        ],
+        "correctAnswer": "William Shakespeare"
+    },
+    {
+        "question": "What is the largest ocean on Earth?",
+        "options": [
+            "Atlantic Ocean",
+            "Indian Ocean",
+            "Pacific Ocean",
+            "Arctic Ocean"
+        ],
+        "correctAnswer": "Pacific Ocean"
+    },
+    {
+        "question": "Which gas do plants absorb from the atmosphere?",
+        "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+        "correctAnswer": "Carbon Dioxide"
+    },
+    {
+        "question": "What is the hardest natural substance on Earth?",
+        "options": ["Gold", "Iron", "Diamond", "Platinum"],
+        "correctAnswer": "Diamond"
+    },
+    {
+        "question": "Who painted the Mona Lisa?",
+        "options": [
+            "Pablo Picasso",
+            "Leonardo da Vinci",
+            "Vincent van Gogh",
+            "Michelangelo"
+        ],
+        "correctAnswer": "Leonardo da Vinci"
+    },
+    {
+        "question": "What is the square root of 64?",
+        "options": ["6", "7", "8", "9"],
+        "correctAnswer": "8"
+    },
+    {
+        "question": "Which country is famous for the Great Wall?",
+        "options": ["India", "China", "Japan", "South Korea"],
+        "correctAnswer": "China"
+    },
+    {
+        "question": "In which continent is the Amazon Rainforest located?",
+        "options": ["Africa", "Asia", "South America", "Australia"],
+        "correctAnswer": "South America"
+    }
+]

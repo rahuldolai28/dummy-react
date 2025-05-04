@@ -12,7 +12,7 @@
 
 
 .App > * {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     margin-top: 50px;
 }
 
@@ -34,7 +34,7 @@
 }
 .title {
     text-align: center;
-    font-size: 3.5rem !important;
+    font-size: 3rem !important;
     font-weight: bold;
     margin-top: 20px;
     padding: 0%;

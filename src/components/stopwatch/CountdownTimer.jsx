@@ -75,7 +75,7 @@ export default function CountdownTimer() {
 
     return (
         <div className="countdown-container">
-            <h3 className="title">CountDown Timer </h3>
+            <h3 className="title count-title">3. CountDown Timer </h3>
 
             {input()}
 

@@ -1,6 +1,7 @@
 .music-player {
     max-width: 500px;
     margin: auto;
+    background-color: #eeeeee;
 }
 .cover-img {
     border-radius: 8px;
@@ -47,14 +48,21 @@
     gap: 10px;
 }
 .track-controls button {
-    background-color: #2004f7;
-    color: white;
+    background-color: #1ED760;
+    color: #000000;
     border: none;
     padding: 5px 14px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1px;
+    margin-bottom: 15px;
 }
 .track-controls button:hover {
-    background-color: #0225e9af;
+    background-color: #17a147ea;
+}
+.progress {
+    height: 8px;
+    border-radius: 5px;
+    background-color: #3498db;
+    transition: width 0.1s linear;
 }

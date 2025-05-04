@@ -4,98 +4,92 @@ import "./filter.css";
 export default function FilterProducts() {
     const [loading, setLoading] = useState(false);
     const [products, setProducts] = useState([]);
-    const [currentSelectedCategory, setCurrentSelectedCategory] = useState("");
     const [filteredItems, setFilteredItems] = useState([]);
+    const [currentSelectedCategory, setCurrentSelectedCategory] = useState("");
+    const [error, setError] = useState(""); // <-- Added error state
 
     async function fetchProducts() {
+        setLoading(true);
+        setError(""); // reset error
         try {
-            setLoading(true);
-            const response = await fetch("https://dummyjson.com/products", {
-                method: "GET",
-            });
+            const response = await fetch("https://dummyjson.com/products");
             const result = await response.json();
 
-            if (result && result.products && result.products.length > 0) {
-                setLoading(false);
+            if (result?.products?.length > 0) {
                 setProducts(result.products);
                 setFilteredItems(result.products);
+            } else {
+                setProducts([]);
+                setFilteredItems([]);
             }
-        } catch (error) {
+        } catch (err) {
+            setError("Network error. Please check your internet connection.");
+            setProducts([]);
+            setFilteredItems([]);
+        } finally {
             setLoading(false);
-            console.error("Error fetching products:", error);
         }
     }
+
     useEffect(() => {
         fetchProducts();
-        console.log("mounted");
     }, []);
 
     const uniqueCategories = useMemo(() => {
-        if (products.length === 0) return [];
         return [...new Set(products.map((item) => item.category))];
     }, [products]);
 
     useEffect(() => {
-        const copyProducts = [...products];
         setFilteredItems(
-            currentSelectedCategory !== ""
-                ? copyProducts.filter(
-                      (productItem) =>
-                          productItem.category.toLowerCase() ===
+            currentSelectedCategory
+                ? products.filter(
+                      (product) =>
+                          product.category.toLowerCase() ===
                           currentSelectedCategory.toLowerCase()
                   )
-                : copyProducts
+                : products
         );
     }, [currentSelectedCategory, products]);
 
-    if (loading) {
-        return <div className="info">Product Details Loading...</div>;
-    }
-    if (products.length === 0) {
-        return <div className="info">No products found</div>;
-    }
     return (
         <div className="filter-products-container">
-            <h1 className="title">Filter Products By Category</h1>
+            <h1 className="title">8. Filter Products By Category</h1>
+
             <div className="filter-categories-container">
-                {uniqueCategories.map((uniqueCategoryItem) => (
+                {uniqueCategories.map((category) => (
                     <button
-                        key={uniqueCategoryItem}
+                        key={category}
                         onClick={() =>
                             setCurrentSelectedCategory(
-                                currentSelectedCategory !== "" &&
-                                    currentSelectedCategory ===
-                                        uniqueCategoryItem
-                                    ? ""
-                                    : uniqueCategoryItem
+                                currentSelectedCategory === category ? "" : category
                             )
                         }
                         className={`category-item ${
-                            currentSelectedCategory === uniqueCategoryItem
-                                ? "active"
-                                : ""
-                        }`}>
-                        {uniqueCategoryItem}
+                            currentSelectedCategory === category ? "active" : ""
+                        }`}
+                    >
+                        {category}
                     </button>
                 ))}
             </div>
+
             <ul className="list-of-products">
-                {filteredItems && filteredItems.length > 0 ? (
-                    filteredItems.map((product) => {
-                        return (
-                            <li key={product.id} className="product-item">
-                                <div className="product-info">
-                                    <p>{product.title}</p>
-                                    <p>Price: ${product.price}</p>
-                                    <button>
-                                        Category: {product.category}
-                                    </button>
-                                </div>
-                            </li>
-                        );
-                    })
+                {loading ? (
+                    <li className="info">Product Details Loading...</li>
+                ) : error ? (
+                    <li className="info">{error}</li>
+                ) : filteredItems.length > 0 ? (
+                    filteredItems.map((product) => (
+                        <li key={product.id} className="product-item">
+                            <div className="product-info">
+                                <p>{product.title}</p>
+                                <p>Price: ${product.price}</p>
+                                <p>Category: {product.category}</p>
+                            </div>
+                        </li>
+                    ))
                 ) : (
-                    <div className="info">No products found</div>
+                    <li className="info">No products found</li>
                 )}
             </ul>
         </div>

@@ -1,0 +1,39 @@
+.progress-percent__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #F0F2F5 ;
+}
+.progress-percent__container input {
+    border-radius: 12px;
+    width: 100px;
+    padding: 10px;
+    outline: none;
+}
+.progress-percent__container .progress_bar .wrapper {
+    width: 400px;
+    height: 20px;
+    border-radius: 40px;
+    border-style: none;
+    color: yellow;
+    background-color:#CCD0D5;
+    position: relative;
+    z-index: 1;
+    place-items: center;
+}
+
+.progress-percent__container .progress_bar .wrapper .innerWrapper {
+    height: 100%;
+    display: grid;
+    border-style: none;
+    place-items: center;
+    border-radius: 20px;
+    margin: auto;
+    background-color: blue;
+    color: #fff;
+    position: absolute;
+    z-index: 100;
+    transition: .7s ease 0.3s;
+}

@@ -1,0 +1,133 @@
+/* .quiz{
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    background-color: #f9f9f9;
+} */
+.quiz {
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.9); /* slightly transparent white */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.bg-img {
+    background-size: contain;
+    background-position: center;
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    height: 450px;
+}
+
+/* Optional: subtle overlay for extra readability */
+.bg-img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.772); /* white tint */
+    z-index: 0;
+}
+
+.bg-img > * {
+    position: relative;
+    z-index: 1;
+}
+.home-quiz h2{
+    font-size: 20px;
+    color: #1b9100;
+    margin-bottom: 0px;
+}
+.home-quiz p{
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.question-container{
+    height: 60px;
+}
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.option {
+    padding: 0.8rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    border: 2px solid #ccc;
+    border-radius: 100px;
+    color: white;
+    background-color: rgb(32, 8, 242);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+}
+
+.option:hover {
+    background-color:  rgb(23, 5, 181);
+}
+
+.option.selected {
+    background-color: #4caf50;
+    color: white;
+    border-color: #4caf50;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    bottom: 10px;
+}
+
+.prev-btn,
+.next-btn,
+.restart-button {
+    padding: 0.7rem 1.4rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.prev-btn:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+
+.prev-btn:hover:not(:disabled),
+.next-btn:hover,
+.restart-button:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    padding: 2rem;
+    text-align: center;
+}
+
+.result h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0px;
+}
+
+.result p {
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: green;
+}
+
