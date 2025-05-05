@@ -1,0 +1,40 @@
+.firebase-todo-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    background-color: #fafafa;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.434);
+}
+.firebase-todo-wrapper h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+.firebase-todo-wrapper form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    background-color: #afecff60;
+    /* border-bottom: 1px solid #ccc; */
+}
+.list-item button {
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: scale(0.65);
+}
+.success {
+    text-decoration: line-through;
+    color: #3dc531;
+    background-color: white;
+}

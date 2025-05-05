@@ -12,11 +12,12 @@ import MusicPlayer from "./components/MusicPlayer/index";
 import ProgressPercent from "./components/progress-percent/index";
 import FileUpload from "./components/file-upload/index";
 import QuizApp from "./components/quiz-app/Quiz-App.jsx";
+import FirebaseTodo from "./components/firebase-todo/index";
 function App() {
     return (
         <div className="App">
             {/* something wrong in <MainProgress/> */}
-            <p className="main-title">15 React Projects</p>
+            {/* <p className="main-title">15 React Projects</p>
             <PaginationTest />
             <Clock />
             <CountdownTimer />
@@ -26,9 +27,9 @@ function App() {
             <ProgressPercent />
             <FilterProducts />
             <MusicPlayer />
-            <FileUpload/>
-            <QuizApp/>
-
+            <FileUpload/> */}
+            {/* <QuizApp/> */}
+            <FirebaseTodo />
         </div>
     );
 }
